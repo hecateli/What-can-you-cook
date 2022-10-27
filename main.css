@@ -1,0 +1,373 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    width: 1200px;
+    margin: 0 auto;
+ }
+
+.clearfix::before,.clearfix:after{
+    content: "";
+    display: table;
+}
+
+.clearfix:after{
+    clear: both;
+}
+
+input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]){
+	appearance: none;
+	outline: none;
+	background: none;
+	cursor: initial;
+}
+
+h3, a {
+	color: var(--dark);
+	font-size: 2rem;
+	font-weight: 400;
+	margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+}
+
+.fa, .fas {
+    font-weight: 900;
+  }
+
+.fa, .far, .fas {
+    font-family: "Font Awesome 5 Free";
+}
+
+.fa, .fab, .fad, .fal, .far, .fas {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+:root{
+    --primary: #66a5ad;
+    --ocean: #07575b;
+    --deep-aqua: #003b46;
+	--light: #EEE;
+	--grey: #888;
+	--dark: #313154;
+	--danger: #ff5b57;
+    --vegetable: rgb(26, 40, 71);
+    --meat: rgb(0, 61, 116);
+    --seafood: var(--primary);
+    --spices: rgb(139, 163, 199);
+    --others: rgb(212, 229, 239);
+
+
+    --vegetable-glow: 0px 0px 4px rgb(26, 40, 71);
+    --meat-glow: 0px 0px 4px rgb(0, 61, 116);
+    --seafood-glow: 0px 0px 4px #66a5ad;
+    --spices-glow: 0px 0px 4px rgb(139, 163, 199);
+    --others-glow: 0px 0px 4px rgb(212, 229, 239);
+}
+
+body{
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+/*  */
+.btn{
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+.text{
+    opacity: 0.8;
+}
+.title{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.meal-search{
+    height: 270px;
+    margin: 0 auto;
+    padding: 2rem;
+    padding-bottom: 0;
+    background: #fff;
+    text-align: center;
+}
+
+.meal-search cite{
+    font-size: 1rem;
+}
+
+.meal-search-box{
+    width: 540px;
+    margin: 1.2rem 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 0px;
+    display: flex;
+    align-items: stretch;
+}
+
+.search-control,
+.search-btn{
+    width: 100%;
+}
+
+.search-control{
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid var(--ocean);
+    color: var(--ocean);
+    border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+}
+
+.search-control::placeholder{
+    color: var(--ocean);
+}
+
+.search-btn{
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    background: var(--ocean);
+    color: #fff;
+    border: none;
+    border-top-right-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+    -ms-transition: all 0.4s linear;
+    -o-transition: all 0.4s linear;
+}
+
+.search-btn:hover{
+    background: var(--deep-aqua);
+}
+
+.pick-type{
+    height: 200px;
+}
+
+.pick-type .options label {
+    float: left;
+	align-items: center;
+	justify-content: center;
+	background-color: #FFF;
+	padding: 1.5rem;
+	box-shadow: var(--shadow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	padding-bottom: 0px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+	display: none;
+}
+
+.bubble {
+    float: left;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+    margin-top: 3px;
+	width: 20px;
+	height: 20px;
+	border-radius: 999px;
+	border: 2px solid var(--primary);
+	box-shadow: var(--primary-glow);
+}
+
+.bubble.vegetable {
+	border: 2px solid var(--vegetable);
+}
+
+.bubble.meat {
+	border: 2px solid var(--meat);
+}
+
+.bubble.seafood {
+	border: 2px solid var(--seafood);
+}
+
+.bubble.spices {
+	border: 2px solid var(--spices);
+}
+
+.bubble.others {
+	border: 2px solid var(--others);
+}
+
+#first{
+    margin-left: 210px;
+}
+
+.bubble::after {
+	content: '';
+	display: block;
+	opacity: 0;
+	width: 0px;
+	height: 0px;
+	background-color: var(--primary);
+	box-shadow: var(--primary-glow);
+	border-radius: 999px;
+	transition: 0.2s ease-in-out;
+}
+
+.bubble.vegetable::after {
+	background-color: var(--vegetable);
+	box-shadow: var(--vegetable-glow);
+}
+
+.bubble.meat::after {
+	background-color: var(--meat);
+	box-shadow: var(--meat-glow);
+}
+
+.bubble.seafood::after {
+	background-color: var(--seafood);
+	box-shadow: var(--seafood-glow);
+}
+
+.bubble.spices::after {
+	background-color: var(--spices);
+	box-shadow: var(--spices-glow);
+}
+
+.bubble.others::after {
+	background-color: var(--others);
+	box-shadow: var(--others-glow);
+}
+
+input:checked ~ .bubble::after {
+	width: 10px;
+	height: 10px;
+	opacity: 1;
+}
+
+.pick-type .options label div {
+    float: left;
+	color: var(--dark);
+	font-size: 1.125rem;
+    margin-left: 15px;
+}
+
+.pick-type input[type="submit"] {
+	display: block;
+	width: 100%;
+	font-size: 1.125rem;
+	padding: 1rem 1.5rem;
+	color: #FFF;
+	font-weight: 700;
+	text-transform: uppercase;
+	background-color: var(--primary);
+	box-shadow: var(--primary-glow);
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: 0.2s ease-out;
+}
+
+.pick-type input[type="submit"]:hover {
+	opacity: 0.75;
+}
+
+.ingredient-list{
+    height: 200px;
+}
+
+.ingredient-list .list {
+	margin: 1rem 0;
+}
+
+.ingredient-list .ingredient-item {
+	height: 35px;
+	align-items: center;
+	background-color: #FFF;
+	border-radius: 0.5rem;
+	margin-bottom: 1rem;
+}
+
+.ingredient-item label {
+	display: block;
+	margin-right: 1rem;
+	cursor: pointer;
+	margin-left: 350px;
+	
+}
+
+.ingredient-item .ingredient-content {
+	flex: 1 1 0%;
+}
+
+.ingredient-item .ingredient-content input {
+	float: left;
+	border: none;
+    color: var(--dark);
+	font-size: 1.125rem;
+	margin-left: 5px;
+}
+
+.ingredient-item .actions {
+	display: flex;
+	align-items: center;
+	float: right;
+	margin-right: 350px;
+}
+
+.ingredient-item .actions button {
+	display: block;
+	padding: 0.5rem;
+	border-radius: 0.25rem;
+	color: #FFF;
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+}
+
+.ingredient-item .actions button:hover {
+	opacity: 0.75;
+}
+
+.ingredient-item .actions .edit {
+	margin-right: 0.5rem;
+	background-color: var(--primary);
+	border: none;
+}
+
+.ingredient-item .actions .delete {
+	background-color: var(--danger);
+	border: none;
+}
+
+.search-recipes {
+	text-align: center;
+}
+
+.search-recipes a{
+	display: block;
+	font-size: 1.5rem;
+	width: 245px;
+	height: 35px;
+	text-decoration: none;
+	color: #EEE;
+	background-color: #003b46;
+	margin-left: 477.5px;
+	border-radius: 2rem;
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What's In Your Fridge</title>
+    <link rel="stylesheet" href="./main.css"> 
+</head>
+<body>
+    <!-- New Ingredient -->
+    <div class = "meal-search wrapper">
+        <h2 class = "title">
+            What's In Your Fridge
+        </h2>
+        <blockquote>
+            Get recipes depending on what you own<br>
+        </blockquote>
+        <form id="new-ingredient-form">
+            <div class = "meal-search-box">
+                <input 
+                    type = "text" 
+                    class = "search-control" 
+                    placeholder="Enter an ingredient"
+                    name="content"
+                    id = "search-input">
+                <input type = "submit" class = "search-btn btn" id = "search-btn" value="">
+                <em class = "fas fa-search"></em>
+                </button>
+            </div>
+            <div class="pick-type">
+                <div class="options">
+                    <label id="first">
+                        <input type="radio" name="category" id="category1" value="vegetable" /> 
+                        <span class="bubble vegetable"></span>
+                        <div>Vegetables</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="category2" value="meat" />
+                        <span class="bubble meat"></span>
+                        <div>Meats</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="category3" value="seafood" />
+                        <span class="bubble seafood"></span>
+                        <div>Seafood</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="category4" value="spices-and-herbs" />
+                        <span class="bubble spices"></span>
+                        <div>Spices & Herbs</div>
+                    </label>
+                    <label>
+                        <input type="radio" name="category" id="category5" value="others" />
+                        <span class="bubble others"></span>
+                        <div>Others</div>
+                    </label>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <!-- End of New Ingredient -->
+
+    <!-- Search Recipes -->
+    <div class="search-recipes wrapper">
+        <a href="recipes.html">
+            What Can I Cook
+        </a>
+    </div>
+
+    <!-- Ingredient List -->
+    <div class="ingredient-list wrapper">
+        <h3>INGREDIENT LIST</h3>
+        <div class="list" id="ingredient-list"></div>
+    </div>
+    <!-- End of Ingredient List -->
+
+    
+    
+    <!-- JS import -->
+    <script src="main.js"></script>
+</body>
+</html>
